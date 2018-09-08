@@ -22,3 +22,11 @@ service.getUnconfirmedTransactions(url: nil, account: account, apiCompletion: co
 ```ruby
 github "aprock/BurstKit"
 ```
+
+----
+
+Please support the developers of the software you use. Value for value. BURST-R6ZV-YLNR-HG6H-EA67D
+
+----------
+
+Released under GPL v3 License - Copyright (c)
