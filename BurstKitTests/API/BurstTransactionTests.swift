@@ -15,6 +15,7 @@ class BurstTransactionTests: XCTestCase {
 
   func testDecoding() {
     let publicKey = "a61325eec9e83d7cac55544b8eca8ea8034559bafb5834b8a5d3b6d4efb85f12"
+    let message = "This is a sendMessage API example"
 
     let transaction = try! JSONDecoder().decode(BurstTransaction.self, from: """
       {
@@ -31,7 +32,7 @@ class BurstTransactionTests: XCTestCase {
         "attachment": {
           "version.Message": 1,
           "messageIsText": true,
-          "message": "This is a sendMessage API example"
+          "message": "\(message)"
         },
         "senderRS": "BURST-FRDJ-UPLH-MY9A-GUKQP",
         "subtype": 0,
@@ -51,6 +52,7 @@ class BurstTransactionTests: XCTestCase {
 
     XCTAssertEqual(transaction.height, 502797)
     XCTAssertEqual(transaction.senderPublicKey, publicKey)
+    XCTAssertEqual((transaction.attachment!.get() as! Message).message, message)
   }
 
 }

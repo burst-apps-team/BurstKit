@@ -28,12 +28,38 @@ class BurstServiceTests: XCTestCase {
       {"errorDescription":"\(description)","errorCode":1}
     """.data(using: .utf8)!
 
-    service.getUnconfirmedTransactions(url: nil, account: account, apiCompletion: completion(
+    service.getUnconfirmedTransactions(account: account, apiCompletion: completion(
       onResult: { response in
         XCTAssert(false)
       },
       onError: { error in
         XCTAssertEqual(error as! BurstError, BurstError.ApiError(description))
+      }
+    ))
+  }
+
+  func testBalanceRequest() {
+    let session = URLSessionMock()
+    let service = BurstService(session: session)
+
+    let balance = "100000000000"
+    session.data = """
+      {
+      "unconfirmedBalanceNQT": "\(balance)",
+      "guaranteedBalanceNQT": "\(balance)",
+      "effectiveBalanceNXT": "\(balance)",
+      "forgedBalanceNQT": "0",
+      "balanceNQT": "\(balance)",
+      "requestProcessingTime": 0
+      }
+      """.data(using: .utf8)!
+
+    service.getBalance(account: account, apiCompletion: completion(
+      onResult: { response in
+        XCTAssertEqual(response.unconfirmedBalanceNQT, balance)
+      },
+      onError: { error in
+        XCTAssert(false)
       }
     ))
   }

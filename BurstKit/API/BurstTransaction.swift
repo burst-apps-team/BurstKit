@@ -39,6 +39,7 @@ public struct BurstTransaction {
     case timestamp
     case type
     case version
+    case attachment
   }
 
   let id: String
@@ -53,6 +54,7 @@ public struct BurstTransaction {
   let height: Double
   let recipientId: String?
   let recipientAddress: String?
+  let attachment: Attachment?
   let senderPublicKey: String
   let senderAddress: String
   let signature: String
@@ -90,6 +92,7 @@ extension BurstTransaction: Decodable {
     confirmations = try data.decodeIfPresent(Double.self, forKey: .confirmations)
     recipientId = try data.decodeIfPresent(String.self, forKey: .recipientId)
     recipientAddress = try data.decodeIfPresent(String.self, forKey: .recipientAddress)
+    attachment = try data.decodeIfPresent(Attachment.self, forKey: .attachment)
   }
 
 }

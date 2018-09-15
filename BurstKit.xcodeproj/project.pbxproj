@@ -34,6 +34,7 @@
 		968A656D2142457700174922 /* CryptoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968A656B2142457700174922 /* CryptoTests.swift */; };
 		968A657021424C9C00174922 /* Keys.m in Sources */ = {isa = PBXBuildFile; fileRef = 968A656E21424C9C00174922 /* Keys.m */; };
 		968A657121424C9C00174922 /* Keys.h in Headers */ = {isa = PBXBuildFile; fileRef = 968A656F21424C9C00174922 /* Keys.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		968A6573214CACF500174922 /* BurstAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968A6572214CACF500174922 /* BurstAttachment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		968A656B2142457700174922 /* CryptoTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptoTests.swift; sourceTree = "<group>"; };
 		968A656E21424C9C00174922 /* Keys.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Keys.m; sourceTree = "<group>"; };
 		968A656F21424C9C00174922 /* Keys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Keys.h; sourceTree = "<group>"; };
+		968A6572214CACF500174922 /* BurstAttachment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BurstAttachment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 				968A65392140D41400174922 /* BurstTransactions.swift */,
 				968A65372140D41400174922 /* BurstUnconfirmedTransactions.swift */,
 				968A65602141F5E200174922 /* BurstApiError.swift */,
+				968A6572214CACF500174922 /* BurstAttachment.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 				968A655D2140F6F000174922 /* Completion.swift in Sources */,
 				968A653F2140D41500174922 /* BurstTransactions.swift in Sources */,
 				968A65492140D4BB00174922 /* Crytpo.m in Sources */,
+				968A6573214CACF500174922 /* BurstAttachment.swift in Sources */,
 				968A657021424C9C00174922 /* Keys.m in Sources */,
 				968A654A2140D4BB00174922 /* curve25519_i64.c in Sources */,
 			);
